@@ -21,13 +21,12 @@
                 <!--suppress AndroidLintContentDescription -->
                 <ImageView
                     android:id="@+id/photo"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/detail_photo_height"
-                    android:scaleType="centerCrop" />
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/detail_photo_height"
+                    android:layout_height="112dp"
                     android:background="@drawable/photo_background_protection" />
 
             </FrameLayout>
@@ -45,7 +44,7 @@
                 <LinearLayout
                     android:id="@+id/meta_bar"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
                     android:background="#333"
@@ -75,58 +74,34 @@
                         android:textColor="#8fff" />
                 </LinearLayout>
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/article_body"
+                    style="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/article_body"
-                        style="?android:attr/textAppearanceMedium"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                        android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-                        android:ellipsize="end"
-                        android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                        android:maxLines="22"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        android:textColor="@color/textColorPrimary"
-                        android:textColorLink="@color/theme_accent"
-                        android:textSize="@dimen/detail_body_text_size" />
-
-                    <Button
-                        android:id="@+id/button_read_all_text"
-                        android:layout_width="70dp"
-                        android:layout_height="30dp"
-                        android:layout_marginBottom="@dimen/fab_margin"
-                        android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                        android:layout_marginTop="@dimen/fab_margin"
-                        android:background="@color/theme_accent"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:text="Read All"
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/detail_button_text_size" />
-
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
+                    android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+                    android:paddingBottom="@dimen/detail_body_bottom_margin"
+                    android:textColor="@color/ltgray"
+                    android:textColorLink="@color/theme_accent"
+                    android:textSize="@dimen/detail_body_text_size" />
 
             </com.example.xyzreader.ui.MaxWidthLinearLayout>
         </FrameLayout>
     </com.example.xyzreader.ui.ObservableScrollView>
 
-    <android.support.design.widget.FloatingActionButton
+    <ImageButton
         android:id="@+id/share_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:background="@drawable/add_fab_background"
+        android:contentDescription="@string/action_share"
         android:elevation="@dimen/fab_elevation"
         android:src="@drawable/ic_share"
-        app:borderWidth="0dp"
-        app:fabSize="normal"
-        app:pressedTranslationZ="12dp" />
-
+        android:stateListAnimator="@anim/fab_state_list_anim" />
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
